@@ -1,0 +1,84 @@
+import java.util.Properties
+
+
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+
+def loadDotEnv() {
+    def props = new Properties()
+    def envFile = new File(project.projectDir.parentFile.parentFile, '.env')
+
+    if (envFile.exists()) {
+        envFile.withInputStream { stream ->
+            props.load(stream)
+        }
+        return props
+    } else {
+        println "Warning: .env file not found at ${envFile.absolutePath}"
+        return new Properties()
+    }
+}
+
+def dotenv = loadDotEnv()
+def googleMapsApiKey = dotenv.getProperty('GOOGLE_MAPS_API_KEY', '')
+
+
+
+
+
+android {
+    namespace = "com.example.moniepoint_test"
+    compileSdk = 34
+    ndkVersion = "25.1.8937393"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = 17
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId = "com.example.moniepoint_test"
+        // You can update the following values to match your application needs.
+        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+        manifestPlaceholders = [
+                GOOGLE_MAPS_API_KEY: googleMapsApiKey
+        ]
+    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
