@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -11,10 +10,17 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
-    return    Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      color: Colors.pinkAccent,
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xFFF8F6F2),
+            Color.fromRGBO(250, 217, 178, 1),
+          ],
+        ),
+      ),
     );
   }
 }
