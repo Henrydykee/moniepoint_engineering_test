@@ -72,7 +72,6 @@ class _OverlayDialogState extends State<OverlayDialog> with SingleTickerProvider
               ),
             ),
           ),
-          // The actual overlay content
           Positioned(
             bottom: MediaQuery.of(context).size.height * 0.220,
             left: 50,
@@ -124,7 +123,7 @@ class _OverlayDialogState extends State<OverlayDialog> with SingleTickerProvider
                 height: 20,
                 colorFilter: const ColorFilter.mode(
                   TestColor.warmGery,
-                  BlendMode.srcIn,  // Adjust blend mode as needed
+                  BlendMode.srcIn,
                 ),
             ),
             const SizedBox(width: 10),
@@ -188,9 +187,6 @@ class _OverlayDialogState extends State<OverlayDialog> with SingleTickerProvider
   }
 }
 
-// class TestColor {
-
-// }
 
 class TextHolder extends StatelessWidget {
   final String title;

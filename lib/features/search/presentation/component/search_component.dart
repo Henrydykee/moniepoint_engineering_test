@@ -36,7 +36,6 @@ class _SearchComponentState extends State<SearchComponent> {
             child: SvgPicture.asset(
               "assets/svg/filter_map_icon.svg",
                colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
-              // fit: BoxFit.contain,
             ),
           )
 

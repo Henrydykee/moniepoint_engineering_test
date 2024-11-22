@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moniepoint_test/core/platform/image_path.dart';
 import '../component/sliding_component.dart';
 
 class ImageComponentPlaceholder extends StatelessWidget {
@@ -30,7 +31,7 @@ class ImageComponentPlaceholder extends StatelessWidget {
             ),
             clipBehavior: Clip.antiAlias,
             child: Image.asset(
-              "assets/images/kitchen.jpg",
+              ImagesPath.kitchenImage,
               fit: BoxFit.cover,
             ),
           ),

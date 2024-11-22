@@ -15,7 +15,4 @@ class IconsPath {
   static const String shieldIcon = "$path/shield_icon.svg";
   static const String trashIcon = "$path/trash_icon.svg";
   static const String walletIcon = "$path/wallet_icon.svg";
-
-
-
 }

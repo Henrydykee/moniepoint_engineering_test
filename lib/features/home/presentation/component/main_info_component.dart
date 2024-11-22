@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:moniepoint_test/core/platform/animations.dart';
+import 'package:moniepoint_test/core/platform/image_path.dart';
 
 import '../../../../core/platform/color.dart';
 import '../../../../core/platform/number_counter.dart';
@@ -44,7 +45,7 @@ class MainInfoComponent extends StatelessWidget {
 
               const CircleAvatar(
                 radius: 25,
-                backgroundImage:  AssetImage("assets/images/avatar.jpg"),
+                backgroundImage:  AssetImage(ImagesPath.avatar),
               ).fadeIn(delay: 1500.ms)
 
             ],

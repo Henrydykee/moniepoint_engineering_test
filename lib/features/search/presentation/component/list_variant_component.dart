@@ -118,7 +118,7 @@ class _LocationAndLayerComponentState extends State<LocationAndLayerComponent> w
             child: buildIconContainer(
               icon  : SvgPicture.asset(IconsPath.locationIcon, colorFilter: const ColorFilter.mode(
                 Colors.white,
-                BlendMode.srcIn,  // Adjust blend mode as needed
+                BlendMode.srcIn,
               )
                 ,height: 20,width: 20,),
             ),
