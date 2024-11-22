@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:moniepoint_test/core/platform/animations.dart';
-import 'package:moniepoint_test/core/platform/color.dart';
-import '../../../../core/platform/number_counter.dart';
-import '../../../../core/platform/text_holder.dart';
 import '../component/animated_container_component.dart';
 import '../component/main_info_component.dart';
 
